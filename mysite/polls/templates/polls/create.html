@@ -1,0 +1,11 @@
+<form action="" method="post">
+    {% csrf_token %}
+    {{ question.as_p }}
+    {{ choices.management_form }}
+    {% for choice in choices %}
+    {{ choice.as_p }}
+    {% endfor %}
+    <input type="submit">
+</form>
+{% if question.errors or choices.errors %}
+{% endif %}

@@ -1,5 +1,7 @@
 {% load static %}
 
+<a href="{% url "polls:create" %}">Create a Poll</a>
+
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 {% if latest_question_list %}
 <ul>
