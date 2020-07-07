@@ -18,7 +18,9 @@ class IndexView(generic.ListView):
         Returns:
             Question
         """
-        return Question.objects.filter(pub_date__lte=timezone.now())[:5]
+        return Question.objects.filter(is_approved=True, pub_date__lte=timezone.now())[
+            :5
+        ]
 
 
 class DetailView(generic.DetailView):

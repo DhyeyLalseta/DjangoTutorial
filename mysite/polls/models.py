@@ -8,6 +8,7 @@ class Question(models.Model):
     pub_date = models.DateTimeField(
         "date published", default=timezone.now, editable=True
     )
+    is_approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.question_text
