@@ -5,7 +5,10 @@ from django.utils import timezone
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField("date published")
+    pub_date = models.DateTimeField(
+        "date published", default=timezone.now, editable=True
+    )
+    is_approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.question_text
